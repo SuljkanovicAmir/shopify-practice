@@ -1,0 +1,16 @@
+<h1>
+  {{ collections['frontpage'].title }}
+</h1>
+<div class="wrapper">
+  {% for product in collections['frontpage'].products %}
+    <div class="product-box">
+      <h2>
+        {{ product.title }}
+      </h2>
+      <h4>
+        {{ product.price | money }}
+      </h4>
+      <img src="{{ product.featured_image | image_url}}" alt="">
+    </div>
+  {% endfor %}
+</div>
